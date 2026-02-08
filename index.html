@@ -50,30 +50,9 @@
                                id="search-input" 
                                placeholder="Search for restaurants, cuisines, or dishes..." 
                                class="search-input"
-                               list="search-suggestions">
+                               onkeyup="searchFood()">
                         <label for="search-toggle" class="search-icon">🔍</label>
                     </div>
-                    <datalist id="search-suggestions">
-                        <option value="Pizza">
-                        <option value="Margherita Pizza">
-                        <option value="Burger">
-                        <option value="Chicken Burger">
-                        <option value="Biryani">
-                        <option value="Hyderabadi Biryani">
-                        <option value="Dessert">
-                        <option value="Chocolate Cake">
-                        <option value="Noodles">
-                        <option value="Veg Hakka Noodles">
-                        <option value="Paneer Tikka">
-                        <option value="Tacos">
-                        <option value="Mexican Tacos">
-                        <option value="Chicken Wings">
-                        <option value="BBQ Chicken Wings">
-                        <option value="Salad">
-                        <option value="Caesar Salad">
-                        <option value="Vegetarian">
-                        <option value="Non-Veg">
-                    </datalist>
                     <div class="search-dropdown">
                         <div class="search-dropdown-header">
                             <span>Filter by:</span>
@@ -167,7 +146,7 @@
             <div class="food-grid">
                 
                 <!-- Food Item 1 -->
-                <div class="food-card" data-category="pizza veg offers">
+                <div class="food-card" data-category="pizza veg offers" data-name="margherita pizza" data-description="classic delight mozzarella cheese">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="Margherita Pizza">
                         <span class="badge offer-badge">20% OFF</span>
@@ -191,7 +170,7 @@
                 </div>
 
                 <!-- Food Item 2 -->
-                <div class="food-card" data-category="burger nonveg">
+                <div class="food-card" data-category="burger nonveg" data-name="chicken burger" data-description="juicy grilled chicken fresh vegetables">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Chicken Burger">
                         <span class="badge nonveg-badge">🔴</span>
@@ -214,7 +193,7 @@
                 </div>
 
                 <!-- Food Item 3 -->
-                <div class="food-card" data-category="biryani nonveg offers">
+                <div class="food-card" data-category="biryani nonveg offers" data-name="hyderabadi biryani" data-description="aromatic basmati rice tender chicken">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" alt="Hyderabadi Biryani">
                         <span class="badge offer-badge">15% OFF</span>
@@ -238,7 +217,7 @@
                 </div>
 
                 <!-- Food Item 4 -->
-                <div class="food-card" data-category="dessert veg">
+                <div class="food-card" data-category="dessert veg" data-name="chocolate cake" data-description="rich moist chocolate cake slice">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Chocolate Cake">
                         <span class="badge veg-badge">🟢</span>
@@ -261,7 +240,7 @@
                 </div>
 
                 <!-- Food Item 5 -->
-                <div class="food-card" data-category="veg">
+                <div class="food-card" data-category="veg" data-name="veg hakka noodles" data-description="stir-fried noodles fresh vegetables">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400" alt="Hakka Noodles">
                         <span class="badge veg-badge">🟢</span>
@@ -284,7 +263,7 @@
                 </div>
 
                 <!-- Food Item 6 -->
-                <div class="food-card" data-category="veg offers">
+                <div class="food-card" data-category="veg offers" data-name="paneer tikka" data-description="grilled cottage cheese spices">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400" alt="Paneer Tikka">
                         <span class="badge offer-badge">25% OFF</span>
@@ -308,7 +287,7 @@
                 </div>
 
                 <!-- Food Item 7 -->
-                <div class="food-card" data-category="nonveg">
+                <div class="food-card" data-category="nonveg" data-name="mexican tacos" data-description="crispy tacos spicy chicken filling">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400" alt="Mexican Tacos">
                         <span class="badge nonveg-badge">🔴</span>
@@ -331,7 +310,7 @@
                 </div>
 
                 <!-- Food Item 8 -->
-                <div class="food-card" data-category="nonveg offers">
+                <div class="food-card" data-category="nonveg offers" data-name="bbq chicken wings" data-description="smoky bbq flavored crispy wings">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400" alt="Chicken Wings">
                         <span class="badge offer-badge">30% OFF</span>
@@ -355,7 +334,7 @@
                 </div>
 
                 <!-- Food Item 9 -->
-                <div class="food-card" data-category="veg">
+                <div class="food-card" data-category="veg" data-name="caesar salad" data-description="fresh greens caesar dressing">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" alt="Caesar Salad">
                         <span class="badge veg-badge">🟢</span>
@@ -511,6 +490,37 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    // Search functionality - filters food items as user types
+    function searchFood() {
+        const searchInput = document.getElementById('search-input');
+        const filter = searchInput.value.toLowerCase().trim();
+        const foodCards = document.querySelectorAll('.food-card');
+        
+        let visibleCount = 0;
+        
+        foodCards.forEach(card => {
+            const name = card.getAttribute('data-name') || '';
+            const description = card.getAttribute('data-description') || '';
+            const category = card.getAttribute('data-category') || '';
+            const searchText = (name + ' ' + description + ' ' + category).toLowerCase();
+            
+            // Show card if search term matches name, description, or category
+            if (filter === '' || searchText.includes(filter)) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Reset all category filters when searching
+        if (filter !== '') {
+            document.getElementById('filter-all').checked = true;
+        }
+    }
+    </script>
 
 </body>
 </html>
