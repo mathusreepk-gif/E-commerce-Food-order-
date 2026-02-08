@@ -44,11 +44,36 @@
                 </div>
                 
                 <!-- Search Bar with Filter Options -->
-                <label for="search-toggle" class="search-bar">
+                <div class="search-bar">
                     <div class="search-input-wrapper">
-                        <input type="text" id="search-input" placeholder="Search for restaurants, cuisines, or dishes..." class="search-input" readonly>
-                        <span class="search-icon">🔍</span>
+                        <input type="text" 
+                               id="search-input" 
+                               placeholder="Search for restaurants, cuisines, or dishes..." 
+                               class="search-input"
+                               list="search-suggestions">
+                        <label for="search-toggle" class="search-icon">🔍</label>
                     </div>
+                    <datalist id="search-suggestions">
+                        <option value="Pizza">
+                        <option value="Margherita Pizza">
+                        <option value="Burger">
+                        <option value="Chicken Burger">
+                        <option value="Biryani">
+                        <option value="Hyderabadi Biryani">
+                        <option value="Dessert">
+                        <option value="Chocolate Cake">
+                        <option value="Noodles">
+                        <option value="Veg Hakka Noodles">
+                        <option value="Paneer Tikka">
+                        <option value="Tacos">
+                        <option value="Mexican Tacos">
+                        <option value="Chicken Wings">
+                        <option value="BBQ Chicken Wings">
+                        <option value="Salad">
+                        <option value="Caesar Salad">
+                        <option value="Vegetarian">
+                        <option value="Non-Veg">
+                    </datalist>
                     <div class="search-dropdown">
                         <div class="search-dropdown-header">
                             <span>Filter by:</span>
@@ -63,7 +88,7 @@
                         <label for="filter-nonveg" class="search-option">🔴 Non-Veg</label>
                         <label for="filter-offers" class="search-option">🎁 Offers Only</label>
                     </div>
-                </label>
+                </div>
                 
                 <!-- Navigation -->
                 <nav class="nav-menu">
