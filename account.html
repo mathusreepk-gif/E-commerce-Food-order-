@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - FoodHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;">
+                        <h1>🍽️ FoodHub</h1>
+                    </a>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="account.html" class="nav-link">Account</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Account Details -->
+    <main class="container">
+        <!-- Auth Section Wrapper (Can mock login vs dashboard with simple CSS) -->
+        <input type="checkbox" id="logged-in" style="display:none;" class="auth-toggle">
+
+        <!-- Not logged in view (Auth tabs) -->
+        <div class="auth-container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: var(--spacing-md)">Welcome to FoodHub
+            </h2>
+            <input type="radio" name="auth-tab" id="auth-login" class="tab-radio" checked>
+            <input type="radio" name="auth-tab" id="auth-register" class="tab-radio">
+
+            <div class="auth-tabs">
+                <label for="auth-login" class="auth-tab-label">Login</label>
+                <label for="auth-register" class="auth-tab-label">Register</label>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form" id="form-login">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="user@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <!-- CSS Hack to view Dashboard without JS -->
+                <label for="logged-in" class="checkout-btn"
+                    style="display:block; text-align:center; margin-top: 20px; text-decoration: none; cursor:pointer;"
+                    onclick="setTimeout(function(){window.scrollTo(0,0);}, 50);">
+                    Login Securely
+                </label>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--light-text);">
+                    Don't have an account? <label for="auth-register"
+                        style="color: var(--primary-color); cursor: pointer; font-weight: bold;">Register here</label>
+                </p>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-form" id="form-register">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="user@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <!-- Make it navigate back to login as a flow simulation -->
+                <label for="auth-login" class="checkout-btn"
+                    style="display:block; text-align:center; background:var(--secondary-color); margin-top: 20px; cursor: pointer;">
+                    Create Account
+                </label>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--light-text);">
+                    Already have an account? <label for="auth-login"
+                        style="color: var(--primary-color); cursor: pointer; font-weight: bold;">Login</label>
+                </p>
+            </div>
+        </div>
+
+        <!-- Logged in view (Dashboard) -->
+        <style>
+            .auth-container {
+                display: block;
+            }
+
+            .dashboard-container {
+                display: none;
+            }
+
+            #logged-in:checked~.auth-container {
+                display: none;
+            }
+
+            #logged-in:checked~.dashboard-container {
+                display: block;
+                animation: slideInCart 0.4s ease;
+            }
+
+            /* Simple Toggle styling */
+            .toggle-switch {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 24px;
+            }
+
+            .toggle-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: .4s;
+                border-radius: 24px;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 18px;
+                width: 18px;
+                left: 3px;
+                bottom: 3px;
+                background-color: white;
+                transition: .4s;
+                border-radius: 50%;
+            }
+
+            input:checked+.slider {
+                background-color: var(--success);
+            }
+
+            input:checked+.slider:before {
+                transform: translateX(26px);
+            }
+        </style>
+
+        <div class="dashboard-container">
+            <h2 class="section-title">My Account</h2>
+
+            <div class="account-container">
+                <!-- CSS Hidden Radios for Account Tabs -->
+                <input type="radio" name="acc-tab" id="tab-profile" class="tab-radio" checked>
+                <input type="radio" name="acc-tab" id="tab-orders" class="tab-radio">
+                <input type="radio" name="acc-tab" id="tab-addresses" class="tab-radio">
+                <input type="radio" name="acc-tab" id="tab-favorites" class="tab-radio">
+                <input type="radio" name="acc-tab" id="tab-smart" class="tab-radio">
+
+                <!-- Sidebar Navigation -->
+                <div class="account-sidebar">
+                    <label for="tab-profile" class="tab-label">👤 Profile Settings</label>
+                    <label for="tab-orders" class="tab-label">📦 Order History</label>
+                    <label for="tab-addresses" class="tab-label">📍 Saved Addresses</label>
+                    <label for="tab-favorites" class="tab-label">❤️ Favorite Restaurants</label>
+                    <label for="tab-smart" class="tab-label">🌟 Smart Features</label>
+                    <label for="logged-in" class="tab-label" style="color:var(--danger); margin-top:10px;">🚪
+                        Logout</label>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="account-content">
+
+                    <!-- Profile Tab -->
+                    <div class="tab-content" id="content-profile">
+                        <h3>Profile Settings</h3>
+                        <p style="color:var(--light-text); margin-bottom:var(--spacing-md)">Manage your personal
+                            information.</p>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" value="Ankit Sharma">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" value="ankit@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" value="+1 234 567 8900">
+                        </div>
+                        <button class="checkout-btn" style="width:auto; margin-top:var(--spacing-sm);">Save
+                            Updates</button>
+                    </div>
+
+                    <!-- Orders Tab -->
+                    <div class="tab-content" id="content-orders">
+                        <h3>Order History</h3>
+                        <p style="color:var(--light-text); margin-bottom:var(--spacing-md)">View your past orders.</p>
+                        <div
+                            style="border:1px solid var(--border-color); padding:var(--spacing-md); border-radius:var(--radius-md); margin-bottom:10px;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                                <b>Order #FH84920</b>
+                                <span style="color:var(--success); font-weight:bold;">Delivered</span>
+                            </div>
+                            <div style="font-size:0.9rem; color:var(--light-text); margin-bottom:10px;">Oct 24, 2026 -
+                                1x Margherita Pizza</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <b>₹299</b>
+                                <button
+                                    style="padding:6px 12px; background:var(--primary-color); color:var(--white); border:none; border-radius:var(--radius-sm); cursor:pointer;">Reorder</button>
+                            </div>
+                        </div>
+
+                        <div
+                            style="border:1px solid var(--border-color); padding:var(--spacing-md); border-radius:var(--radius-md);">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+                                <b>Order #FH81234</b>
+                                <span style="color:var(--success); font-weight:bold;">Delivered</span>
+                            </div>
+                            <div style="font-size:0.9rem; color:var(--light-text); margin-bottom:10px;">Oct 21, 2026 -
+                                2x Chicken Burger</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <b>₹398</b>
+                                <button
+                                    style="padding:6px 12px; background:var(--primary-color); color:var(--white); border:none; border-radius:var(--radius-sm); cursor:pointer;">Reorder</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addresses Tab -->
+                    <div class="tab-content" id="content-addresses">
+                        <h3>Saved Addresses</h3>
+                        <p style="color:var(--light-text); margin-bottom:var(--spacing-md)">Where do you want your food
+                            delivered?</p>
+                        <div
+                            style="border:1px solid var(--border-color); padding:var(--spacing-md); border-radius:var(--radius-md); margin-bottom:10px; display:flex; justify-content:space-between; align-items:flex-start;">
+                            <div>
+                                <b style="display:block; margin-bottom:5px;">🏠 Home</b>
+                                <div style="font-size:0.9rem; color:var(--light-text);">123 Main St, Apartment 4B<br>New
+                                    York, NY 10001</div>
+                            </div>
+                            <button style="border:none; background:none; cursor:pointer;">✏️</button>
+                        </div>
+                        <button class="checkout-btn"
+                            style="width:auto; margin-top:var(--spacing-sm); background:var(--white); color:var(--primary-color); border:2px solid var(--primary-color);">+
+                            Add New Address</button>
+                    </div>
+
+                    <!-- Favorites Tab -->
+                    <div class="tab-content" id="content-favorites">
+                        <h3>Favorite Restaurants</h3>
+                        <p style="color:var(--light-text); margin-bottom:var(--spacing-md)">Your go-to places for
+                            delicious meals.</p>
+                        <div
+                            style="display:flex; align-items:center; gap:var(--spacing-md); border:1px solid var(--border-color); padding:var(--spacing-md); border-radius:var(--radius-md); margin-bottom:10px;">
+                            <div style="font-size:2rem;">🍕</div>
+                            <div style="flex:1;">
+                                <h4 style="margin:0;">Pizza Paradise</h4>
+                                <div style="font-size:0.8rem; color:var(--light-text);">Italian • 4.5 ⭐</div>
+                            </div>
+                            <button
+                                style="border:none; color:var(--danger); cursor:pointer; font-size:1.2rem; background:none;">❤️</button>
+                        </div>
+                        <div
+                            style="display:flex; align-items:center; gap:var(--spacing-md); border:1px solid var(--border-color); padding:var(--spacing-md); border-radius:var(--radius-md); margin-bottom:10px;">
+                            <div style="font-size:2rem;">🍔</div>
+                            <div style="flex:1;">
+                                <h4 style="margin:0;">Burger Queen</h4>
+                                <div style="font-size:0.8rem; color:var(--light-text);">Fast Food • 4.2 ⭐</div>
+                            </div>
+                            <button
+                                style="border:none; color:var(--danger); cursor:pointer; font-size:1.2rem; background:none;">❤️</button>
+                        </div>
+                    </div>
+
+                    <!-- Smart Features Tab -->
+                    <div class="tab-content" id="content-smart">
+                        <h3>🌟 Smart Features</h3>
+                        <p style="color:var(--light-text); margin-bottom:var(--spacing-md)">Personalize your FoodHub
+                            experience.</p>
+
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; padding-bottom:15px; border-bottom:1px solid var(--border-color);">
+                            <div>
+                                <b style="display:block;">🔔 Push Notifications</b>
+                                <span style="font-size:0.9rem; color:var(--light-text);">Get live updates on order
+                                    status</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; padding-bottom:15px; border-bottom:1px solid var(--border-color);">
+                            <div>
+                                <b style="display:block;">🌱 Veg-Only Mode</b>
+                                <span style="font-size:0.9rem; color:var(--light-text);">Hide all non-vegetarian items
+                                    across the app</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div style="margin-top:20px;">
+                            <b>🤖 AI Recommendations</b>
+                            <div style="font-size:0.9rem; color:var(--light-text); margin-bottom:10px;">Based on your
+                                past 5 orders, AI suggests you might like:</div>
+
+                            <div
+                                style="background:linear-gradient(135deg, rgba(252,128,25,0.1), rgba(96,178,70,0.1)); padding:var(--spacing-md); border-radius:var(--radius-md); border:1px dashed var(--primary-color);">
+                                <h4 style="margin:0; color:var(--primary-color);">Gourmet Veggie Pizza</h4>
+                                <p style="font-size:0.9rem; margin:5px 0;">Matches your preference for <b>Italian</b>
+                                    and <b>Vegetarian</b>.</p>
+                                <button class="checkout-btn"
+                                    style="width:auto; padding:6px 12px; font-size:0.9rem;">View Item</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chat Support Widget -->
+    <!-- Hidden toggle -->
+    <input type="checkbox" id="chat-toggle" class="chat-widget-toggle">
+
+    <!-- Floating button -->
+    <label for="chat-toggle" class="chat-btn">💬</label>
+
+    <!-- Chat Interface -->
+    <div class="chat-box">
+        <div class="chat-header">
+            <span>💬 Live Chat Support</span>
+            <label for="chat-toggle" style="cursor:pointer;">✕</label>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="chat-msg msg-ai">
+                Hi! I am the FoodHub Assistant 🤖<br>How can I help you regarding your recent order?
+            </div>
+            <!-- Dynamic msgs can be added here with JS, but static for now -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleChatEnter(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FoodHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chat Bot Functionality
+        const aiResponses = [
+            "I'm sorry, I didn't quite catch that. Could you rephrase?",
+            "Your order is currently being prepared and will be out for delivery soon!",
+            "I can help you track your order or issue a refund. What would you like to do?",
+            "If your food arrived cold, we deeply apologize. I have added a ₹50 coupon to your account!",
+            "The delivery partner is 5 minutes away from your location.",
+            "Our support agents are currently busy. Is there anything else I can help you with?",
+            "I'm just a demo bot, but in a real app I would process your request instantly! 🍔"
+        ];
+
+        function sendMessage() {
+            const inputField = document.getElementById('chat-input');
+            const message = inputField.value.trim();
+            const chatBody = document.getElementById('chat-body');
+
+            if (message === '') return;
+
+            // 1. Add User Message
+            const userMsgDiv = document.createElement('div');
+            userMsgDiv.className = 'chat-msg';
+            userMsgDiv.style.alignSelf = 'flex-end';
+            userMsgDiv.style.backgroundColor = 'var(--primary-color)';
+            userMsgDiv.style.color = 'var(--white)';
+            userMsgDiv.style.borderBottomRightRadius = '2px';
+            userMsgDiv.textContent = message;
+            chatBody.appendChild(userMsgDiv);
+
+            // Clear input and scroll down
+            inputField.value = '';
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // 2. Simulate AI Typing delay and Response
+            setTimeout(() => {
+                const aiMsgDiv = document.createElement('div');
+                aiMsgDiv.className = 'chat-msg msg-ai';
+
+                // Pick a random response from the array
+                const randomResponse = aiResponses[Math.floor(Math.random() * aiResponses.length)];
+                aiMsgDiv.textContent = randomResponse;
+
+                chatBody.appendChild(aiMsgDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000); // 1 second delay
+        }
+
+        // Allow sending with Enter key
+        function handleChatEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+
+</html>

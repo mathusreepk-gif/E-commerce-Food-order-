@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodHub - Order Food Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Cart Toggle Checkbox (Hidden) - Used for Cart Sidebar Toggle -->
     <input type="checkbox" id="cart-toggle" class="cart-toggle">
-    
+
     <!-- Hidden Checkboxes for Cart Items (must be at root level for CSS selectors) -->
     <input type="checkbox" id="item-1" class="cart-checkbox">
     <input type="checkbox" id="item-2" class="cart-checkbox">
@@ -20,10 +22,10 @@
     <input type="checkbox" id="item-7" class="cart-checkbox">
     <input type="checkbox" id="item-8" class="cart-checkbox">
     <input type="checkbox" id="item-9" class="cart-checkbox">
-    
+
     <!-- Search Toggle Checkbox (Hidden) -->
     <input type="checkbox" id="search-toggle" class="search-toggle">
-    
+
     <!-- Filter Radio Buttons for Search/Category (Hidden) -->
     <input type="radio" id="filter-all" name="filter" class="filter-radio" checked>
     <input type="radio" id="filter-pizza" name="filter" class="filter-radio">
@@ -33,7 +35,7 @@
     <input type="radio" id="filter-veg" name="filter" class="filter-radio">
     <input type="radio" id="filter-nonveg" name="filter" class="filter-radio">
     <input type="radio" id="filter-offers" name="filter" class="filter-radio">
-    
+
     <!-- Header Section -->
     <header class="header">
         <div class="container">
@@ -42,15 +44,13 @@
                 <div class="logo">
                     <h1>🍽️ FoodHub</h1>
                 </div>
-                
+
                 <!-- Search Bar with Filter Options -->
                 <div class="search-bar">
                     <div class="search-input-wrapper">
-                        <input type="text" 
-                               id="search-input" 
-                               placeholder="Search for restaurants, cuisines, or dishes..." 
-                               class="search-input"
-                               onkeyup="searchFood()">
+                        <input type="text" id="search-input"
+                            placeholder="Search for restaurants, cuisines, or dishes..." class="search-input"
+                            onkeyup="searchFood()">
                         <label for="search-toggle" class="search-icon">🔍</label>
                     </div>
                     <div class="search-dropdown">
@@ -68,15 +68,15 @@
                         <label for="filter-offers" class="search-option">🎁 Offers Only</label>
                     </div>
                 </div>
-                
+
                 <!-- Navigation -->
                 <nav class="nav-menu">
                     <label for="filter-all" class="nav-link">Home</label>
                     <a href="#categories" class="nav-link">Categories</a>
                     <label for="filter-offers" class="nav-link">Offers</label>
-                    <a href="#footer" class="nav-link">Help</a>
+                    <a href="account.html" class="nav-link">Account</a>
                 </nav>
-                
+
                 <!-- Cart Button -->
                 <label for="cart-toggle" class="cart-btn">
                     🛒 Cart
@@ -141,14 +141,16 @@
     <section class="food-listing" id="food-listing">
         <div class="container">
             <h2 class="section-title">Popular Dishes Near You</h2>
-            
+
             <!-- Food Items Grid -->
             <div class="food-grid">
-                
+
                 <!-- Food Item 1 -->
-                <div class="food-card" data-category="pizza veg offers" data-name="margherita pizza" data-description="classic delight mozzarella cheese">
+                <div class="food-card" data-category="pizza veg offers" data-name="margherita pizza"
+                    data-description="classic delight mozzarella cheese">
                     <div class="food-image">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="Margherita Pizza">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400"
+                            alt="Margherita Pizza">
                         <span class="badge offer-badge">20% OFF</span>
                         <span class="badge veg-badge">🟢</span>
                     </div>
@@ -164,15 +166,18 @@
                         <p class="food-description">Classic delight with 100% real mozzarella cheese</p>
                         <div class="food-footer">
                             <span class="price">₹299</span>
-                            <label for="item-1" class="add-to-cart-btn" data-item="Margherita Pizza" data-price="299">Add to Cart</label>
+                            <label for="item-1" class="add-to-cart-btn" data-item="Margherita Pizza"
+                                data-price="299">Add to Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 2 -->
-                <div class="food-card" data-category="burger nonveg" data-name="chicken burger" data-description="juicy grilled chicken fresh vegetables">
+                <div class="food-card" data-category="burger nonveg" data-name="chicken burger"
+                    data-description="juicy grilled chicken fresh vegetables">
                     <div class="food-image">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Chicken Burger">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400"
+                            alt="Chicken Burger">
                         <span class="badge nonveg-badge">🔴</span>
                     </div>
                     <div class="food-info">
@@ -187,15 +192,18 @@
                         <p class="food-description">Juicy grilled chicken with fresh vegetables</p>
                         <div class="food-footer">
                             <span class="price">₹199</span>
-                            <label for="item-2" class="add-to-cart-btn" data-item="Chicken Burger" data-price="199">Add to Cart</label>
+                            <label for="item-2" class="add-to-cart-btn" data-item="Chicken Burger" data-price="199">Add
+                                to Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 3 -->
-                <div class="food-card" data-category="biryani nonveg offers" data-name="hyderabadi biryani" data-description="aromatic basmati rice tender chicken">
+                <div class="food-card" data-category="biryani nonveg offers" data-name="hyderabadi biryani"
+                    data-description="aromatic basmati rice tender chicken">
                     <div class="food-image">
-                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" alt="Hyderabadi Biryani">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400"
+                            alt="Hyderabadi Biryani">
                         <span class="badge offer-badge">15% OFF</span>
                         <span class="badge nonveg-badge">🔴</span>
                     </div>
@@ -211,13 +219,15 @@
                         <p class="food-description">Aromatic basmati rice with tender chicken</p>
                         <div class="food-footer">
                             <span class="price">₹349</span>
-                            <label for="item-3" class="add-to-cart-btn" data-item="Hyderabadi Biryani" data-price="349">Add to Cart</label>
+                            <label for="item-3" class="add-to-cart-btn" data-item="Hyderabadi Biryani"
+                                data-price="349">Add to Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 4 -->
-                <div class="food-card" data-category="dessert veg" data-name="chocolate cake" data-description="rich moist chocolate cake slice">
+                <div class="food-card" data-category="dessert veg" data-name="chocolate cake"
+                    data-description="rich moist chocolate cake slice">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Chocolate Cake">
                         <span class="badge veg-badge">🟢</span>
@@ -234,15 +244,18 @@
                         <p class="food-description">Rich and moist chocolate cake slice</p>
                         <div class="food-footer">
                             <span class="price">₹149</span>
-                            <label for="item-4" class="add-to-cart-btn" data-item="Chocolate Cake" data-price="149">Add to Cart</label>
+                            <label for="item-4" class="add-to-cart-btn" data-item="Chocolate Cake" data-price="149">Add
+                                to Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 5 -->
-                <div class="food-card" data-category="veg" data-name="veg hakka noodles" data-description="stir-fried noodles fresh vegetables">
+                <div class="food-card" data-category="veg" data-name="veg hakka noodles"
+                    data-description="stir-fried noodles fresh vegetables">
                     <div class="food-image">
-                        <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400" alt="Hakka Noodles">
+                        <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400"
+                            alt="Hakka Noodles">
                         <span class="badge veg-badge">🟢</span>
                     </div>
                     <div class="food-info">
@@ -257,15 +270,18 @@
                         <p class="food-description">Stir-fried noodles with fresh vegetables</p>
                         <div class="food-footer">
                             <span class="price">₹179</span>
-                            <label for="item-5" class="add-to-cart-btn" data-item="Veg Hakka Noodles" data-price="179">Add to Cart</label>
+                            <label for="item-5" class="add-to-cart-btn" data-item="Veg Hakka Noodles"
+                                data-price="179">Add to Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 6 -->
-                <div class="food-card" data-category="veg offers" data-name="paneer tikka" data-description="grilled cottage cheese spices">
+                <div class="food-card" data-category="veg offers" data-name="paneer tikka"
+                    data-description="grilled cottage cheese spices">
                     <div class="food-image">
-                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400" alt="Paneer Tikka">
+                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400"
+                            alt="Paneer Tikka">
                         <span class="badge offer-badge">25% OFF</span>
                         <span class="badge veg-badge">🟢</span>
                     </div>
@@ -281,15 +297,18 @@
                         <p class="food-description">Grilled cottage cheese with spices</p>
                         <div class="food-footer">
                             <span class="price">₹249</span>
-                            <label for="item-6" class="add-to-cart-btn" data-item="Paneer Tikka" data-price="249">Add to Cart</label>
+                            <label for="item-6" class="add-to-cart-btn" data-item="Paneer Tikka" data-price="249">Add to
+                                Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 7 -->
-                <div class="food-card" data-category="nonveg" data-name="mexican tacos" data-description="crispy tacos spicy chicken filling">
+                <div class="food-card" data-category="nonveg" data-name="mexican tacos"
+                    data-description="crispy tacos spicy chicken filling">
                     <div class="food-image">
-                        <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400" alt="Mexican Tacos">
+                        <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400"
+                            alt="Mexican Tacos">
                         <span class="badge nonveg-badge">🔴</span>
                     </div>
                     <div class="food-info">
@@ -304,15 +323,18 @@
                         <p class="food-description">Crispy tacos with spicy chicken filling</p>
                         <div class="food-footer">
                             <span class="price">₹229</span>
-                            <label for="item-7" class="add-to-cart-btn" data-item="Mexican Tacos" data-price="229">Add to Cart</label>
+                            <label for="item-7" class="add-to-cart-btn" data-item="Mexican Tacos" data-price="229">Add
+                                to Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 8 -->
-                <div class="food-card" data-category="nonveg offers" data-name="bbq chicken wings" data-description="smoky bbq flavored crispy wings">
+                <div class="food-card" data-category="nonveg offers" data-name="bbq chicken wings"
+                    data-description="smoky bbq flavored crispy wings">
                     <div class="food-image">
-                        <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400" alt="Chicken Wings">
+                        <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400"
+                            alt="Chicken Wings">
                         <span class="badge offer-badge">30% OFF</span>
                         <span class="badge nonveg-badge">🔴</span>
                     </div>
@@ -328,13 +350,15 @@
                         <p class="food-description">Smoky BBQ flavored crispy wings</p>
                         <div class="food-footer">
                             <span class="price">₹279</span>
-                            <label for="item-8" class="add-to-cart-btn" data-item="BBQ Chicken Wings" data-price="279">Add to Cart</label>
+                            <label for="item-8" class="add-to-cart-btn" data-item="BBQ Chicken Wings"
+                                data-price="279">Add to Cart</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Food Item 9 -->
-                <div class="food-card" data-category="veg" data-name="caesar salad" data-description="fresh greens caesar dressing">
+                <div class="food-card" data-category="veg" data-name="caesar salad"
+                    data-description="fresh greens caesar dressing">
                     <div class="food-image">
                         <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" alt="Caesar Salad">
                         <span class="badge veg-badge">🟢</span>
@@ -351,7 +375,8 @@
                         <p class="food-description">Fresh greens with caesar dressing</p>
                         <div class="food-footer">
                             <span class="price">₹199</span>
-                            <label for="item-9" class="add-to-cart-btn" data-item="Caesar Salad" data-price="199">Add to Cart</label>
+                            <label for="item-9" class="add-to-cart-btn" data-item="Caesar Salad" data-price="199">Add to
+                                Cart</label>
                         </div>
                     </div>
                 </div>
@@ -368,7 +393,7 @@
         </div>
         <div class="cart-items">
             <!-- Cart items will appear here when checkboxes are checked -->
-            
+
             <!-- Item 1 -->
             <div class="cart-item" id="cart-item-1">
                 <div class="cart-item-info">
@@ -456,7 +481,8 @@
                 <span>Total:</span>
                 <span class="total-amount">₹0</span>
             </div>
-            <button class="checkout-btn">Proceed to Checkout</button>
+            <a href="checkout.html" class="checkout-btn"
+                style="display:block; text-align:center; text-decoration:none;">Proceed to Checkout</a>
         </div>
     </div>
 
@@ -492,35 +518,36 @@
     </footer>
 
     <script>
-    // Search functionality - filters food items as user types
-    function searchFood() {
-        const searchInput = document.getElementById('search-input');
-        const filter = searchInput.value.toLowerCase().trim();
-        const foodCards = document.querySelectorAll('.food-card');
-        
-        let visibleCount = 0;
-        
-        foodCards.forEach(card => {
-            const name = card.getAttribute('data-name') || '';
-            const description = card.getAttribute('data-description') || '';
-            const category = card.getAttribute('data-category') || '';
-            const searchText = (name + ' ' + description + ' ' + category).toLowerCase();
-            
-            // Show card if search term matches name, description, or category
-            if (filter === '' || searchText.includes(filter)) {
-                card.style.display = 'block';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
+        // Search functionality - filters food items as user types
+        function searchFood() {
+            const searchInput = document.getElementById('search-input');
+            const filter = searchInput.value.toLowerCase().trim();
+            const foodCards = document.querySelectorAll('.food-card');
+
+            let visibleCount = 0;
+
+            foodCards.forEach(card => {
+                const name = card.getAttribute('data-name') || '';
+                const description = card.getAttribute('data-description') || '';
+                const category = card.getAttribute('data-category') || '';
+                const searchText = (name + ' ' + description + ' ' + category).toLowerCase();
+
+                // Show card if search term matches name, description, or category
+                if (filter === '' || searchText.includes(filter)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Reset all category filters when searching
+            if (filter !== '') {
+                document.getElementById('filter-all').checked = true;
             }
-        });
-        
-        // Reset all category filters when searching
-        if (filter !== '') {
-            document.getElementById('filter-all').checked = true;
         }
-    }
     </script>
 
 </body>
+
 </html>

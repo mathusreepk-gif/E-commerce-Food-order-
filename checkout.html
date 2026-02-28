@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - FoodHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;"><h1>🍽️ FoodHub</h1></a>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="account.html" class="nav-link">Account</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Content -->
+    <main class="container">
+        <div class="checkout-container">
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <h2 class="section-title">Checkout</h2>
+                
+                <h3>1. Delivery Address</h3>
+                <br>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Complete Address</label>
+                    <textarea id="address" rows="3" placeholder="123 Main St, Apartment 4B..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 234 567 8900" required>
+                </div>
+
+                <br><br>
+                <h3>2. Payment Options</h3>
+                <div class="payment-options">
+                    <input type="radio" name="payment" id="pay-upi" class="payment-radio" style="display:none;" checked>
+                    <label for="pay-upi" class="payment-option-label">
+                        <span style="font-size: 1.5rem;">📱</span>
+                        <span><b>UPI</b> (Google Pay, PhonePe, Paytm)</span>
+                    </label>
+
+                    <input type="radio" name="payment" id="pay-card" class="payment-radio" style="display:none;">
+                    <label for="pay-card" class="payment-option-label">
+                        <span style="font-size: 1.5rem;">💳</span>
+                        <span><b>Credit / Debit Card</b></span>
+                    </label>
+
+                    <input type="radio" name="payment" id="pay-cod" class="payment-radio" style="display:none;">
+                    <label for="pay-cod" class="payment-option-label">
+                        <span style="font-size: 1.5rem;">💵</span>
+                        <span><b>Cash on Delivery</b></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <br>
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    <span>Margherita Pizza (x1)</span>
+                    <span>₹299</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    <span>Delivery Fee</span>
+                    <span>₹40</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px; color:var(--success);">
+                    <span>Discount</span>
+                    <span>-₹50</span>
+                </div>
+                <hr style="border:0; border-top:1px solid var(--border-color); margin:15px 0;">
+                <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:1.2rem; margin-bottom:20px;">
+                    <span>Total Amount</span>
+                    <span>₹289</span>
+                </div>
+
+                <!-- We navigate to tracking.html when placed to simulate flow without JS -->
+                <a href="tracking.html" style="text-decoration:none;">
+                    <button class="checkout-btn">Place Order</button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FoodHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

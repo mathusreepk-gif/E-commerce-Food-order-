@@ -1,0 +1,114 @@
+<!--  --><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - FoodHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;">
+                        <h1>🍽️ FoodHub</h1>
+                    </a>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="account.html" class="nav-link">Account</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tracking Content -->
+    <main class="container">
+        <div class="tracking-container">
+            <div class="tracking-card">
+                <h2 class="section-title" style="margin-bottom:10px;">Track Order</h2>
+                <p>Order ID: #FH84920</p>
+                <div class="stepper">
+                    <div class="step active">
+                        <div class="step-icon">✓</div>
+                        <div class="step-content">
+                            <b>Order Confirmed</b>
+                            <div style="font-size:0.85rem; color:var(--light-text);">We have received your order.</div>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+
+                    <div class="step active">
+                        <div class="step-icon">🔥</div>
+                        <div class="step-content">
+                            <b>Preparing Food</b>
+                            <div style="font-size:0.85rem; color:var(--light-text);">Your food is being packed with
+                                love.</div>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+
+                    <div class="step active">
+                        <div class="step-icon">🛵</div>
+                        <div class="step-content">
+                            <b>Out for Delivery</b>
+                            <div style="font-size:0.85rem; color:var(--light-text);">Partner is on the way to your
+                                location.</div>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+
+                    <!-- Not yet active -->
+                    <div class="step">
+                        <div class="step-icon">🏠</div>
+                        <div class="step-content">
+                            <b style="color:var(--light-text);">Delivered</b>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                </div>
+
+                <h3>Live Location</h3>
+                <div class="live-map">
+                    <span>📍 Map Loading... (Demo Mode)</span>
+                </div>
+
+                <div class="partner-details">
+                    <div class="partner-avatar">
+                        👨‍🦱
+                    </div>
+                    <div>
+                        <h4 style="margin:0;">Ramesh Kumar</h4>
+                        <div style="font-size:0.85rem; color:var(--light-text);">Delivery Partner • ⭐️ 4.8</div>
+                    </div>
+                    <div style="margin-left:auto;">
+                        <button
+                            style="padding:8px 16px; background:var(--primary-color); color:var(--white); border:none; border-radius:var(--radius-sm); font-weight:bold; cursor:pointer;"
+                            onclick="alert('Calling partner...')">CALL</button>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Back home equivalent -->
+                <a href="index.html" style="text-decoration:none;">
+                    <button class="checkout-btn" style="background-color: var(--dark-text);">Return Home</button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FoodHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
