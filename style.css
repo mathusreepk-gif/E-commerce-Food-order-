@@ -551,30 +551,14 @@ body {
     transform: scale(1.05);
 }
 
-/* When item is added to cart (checkbox checked), change button style */
-#item-1:checked~* label[for="item-1"],
-#item-2:checked~* label[for="item-2"],
-#item-3:checked~* label[for="item-3"],
-#item-4:checked~* label[for="item-4"],
-#item-5:checked~* label[for="item-5"],
-#item-6:checked~* label[for="item-6"],
-#item-7:checked~* label[for="item-7"],
-#item-8:checked~* label[for="item-8"],
-#item-9:checked~* label[for="item-9"] {
+/* When item is added (JS handled) */
+.add-to-cart-btn.added {
     background-color: var(--success);
     color: var(--white);
     border-color: var(--success);
 }
 
-#item-1:checked~* label[for="item-1"]::after,
-#item-2:checked~* label[for="item-2"]::after,
-#item-3:checked~* label[for="item-3"]::after,
-#item-4:checked~* label[for="item-4"]::after,
-#item-5:checked~* label[for="item-5"]::after,
-#item-6:checked~* label[for="item-6"]::after,
-#item-7:checked~* label[for="item-7"]::after,
-#item-8:checked~* label[for="item-8"]::after,
-#item-9:checked~* label[for="item-9"]::after {
+.add-to-cart-btn.added::after {
     content: ' ✓';
 }
 
@@ -740,131 +724,16 @@ body {
     transform: translateY(-2px);
 }
 
-/* Update cart count badge - Update count based on checked items */
-/* 1 item */
-#item-1:checked~* .cart-count::before,
-#item-2:checked~* .cart-count::before,
-#item-3:checked~* .cart-count::before,
-#item-4:checked~* .cart-count::before,
-#item-5:checked~* .cart-count::before,
-#item-6:checked~* .cart-count::before,
-#item-7:checked~* .cart-count::before,
-#item-8:checked~* .cart-count::before,
-#item-9:checked~* .cart-count::before {
-    content: '1';
-}
-
-/* 2 items */
-#item-1:checked~#item-2:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~* .cart-count::before,
-#item-1:checked~#item-4:checked~* .cart-count::before,
-#item-1:checked~#item-5:checked~* .cart-count::before,
-#item-1:checked~#item-6:checked~* .cart-count::before,
-#item-1:checked~#item-7:checked~* .cart-count::before,
-#item-1:checked~#item-8:checked~* .cart-count::before,
-#item-1:checked~#item-9:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~* .cart-count::before,
-#item-2:checked~#item-4:checked~* .cart-count::before,
-#item-2:checked~#item-5:checked~* .cart-count::before,
-#item-2:checked~#item-6:checked~* .cart-count::before,
-#item-2:checked~#item-7:checked~* .cart-count::before,
-#item-2:checked~#item-8:checked~* .cart-count::before,
-#item-2:checked~#item-9:checked~* .cart-count::before,
-#item-3:checked~#item-4:checked~* .cart-count::before,
-#item-3:checked~#item-5:checked~* .cart-count::before,
-#item-3:checked~#item-6:checked~* .cart-count::before,
-#item-3:checked~#item-7:checked~* .cart-count::before,
-#item-3:checked~#item-8:checked~* .cart-count::before,
-#item-3:checked~#item-9:checked~* .cart-count::before,
-#item-4:checked~#item-5:checked~* .cart-count::before,
-#item-4:checked~#item-6:checked~* .cart-count::before,
-#item-4:checked~#item-7:checked~* .cart-count::before,
-#item-4:checked~#item-8:checked~* .cart-count::before,
-#item-4:checked~#item-9:checked~* .cart-count::before,
-#item-5:checked~#item-6:checked~* .cart-count::before,
-#item-5:checked~#item-7:checked~* .cart-count::before,
-#item-5:checked~#item-8:checked~* .cart-count::before,
-#item-5:checked~#item-9:checked~* .cart-count::before,
-#item-6:checked~#item-7:checked~* .cart-count::before,
-#item-6:checked~#item-8:checked~* .cart-count::before,
-#item-6:checked~#item-9:checked~* .cart-count::before,
-#item-7:checked~#item-8:checked~* .cart-count::before,
-#item-7:checked~#item-9:checked~* .cart-count::before,
-#item-8:checked~#item-9:checked~* .cart-count::before {
-    content: '2';
-}
-
-/* 3 items */
-#item-1:checked~#item-2:checked~#item-3:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-4:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-5:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-6:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-7:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-8:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-9:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-4:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-5:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-6:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-7:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-8:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-9:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-4:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-5:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-6:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-7:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-8:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-9:checked~* .cart-count::before,
-#item-3:checked~#item-4:checked~#item-5:checked~* .cart-count::before,
-#item-3:checked~#item-4:checked~#item-6:checked~* .cart-count::before,
-#item-3:checked~#item-4:checked~#item-7:checked~* .cart-count::before,
-#item-3:checked~#item-4:checked~#item-8:checked~* .cart-count::before,
-#item-3:checked~#item-4:checked~#item-9:checked~* .cart-count::before,
-#item-4:checked~#item-5:checked~#item-6:checked~* .cart-count::before,
-#item-4:checked~#item-5:checked~#item-7:checked~* .cart-count::before,
-#item-4:checked~#item-5:checked~#item-8:checked~* .cart-count::before,
-#item-4:checked~#item-5:checked~#item-9:checked~* .cart-count::before,
-#item-5:checked~#item-6:checked~#item-7:checked~* .cart-count::before,
-#item-5:checked~#item-6:checked~#item-8:checked~* .cart-count::before,
-#item-5:checked~#item-6:checked~#item-9:checked~* .cart-count::before,
-#item-6:checked~#item-7:checked~#item-8:checked~* .cart-count::before,
-#item-6:checked~#item-7:checked~#item-9:checked~* .cart-count::before,
-#item-7:checked~#item-8:checked~#item-9:checked~* .cart-count::before {
-    content: '3';
-}
-
-/* 4+ items - simplified approach showing 4+ for any 4 or more items */
-#item-1:checked~#item-2:checked~#item-3:checked~#item-4:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-3:checked~#item-5:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-4:checked~#item-5:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-4:checked~#item-5:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-4:checked~#item-5:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-3:checked~#item-6:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-3:checked~#item-7:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-3:checked~#item-8:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-3:checked~#item-9:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-4:checked~#item-6:checked~* .cart-count::before,
-#item-1:checked~#item-2:checked~#item-5:checked~#item-6:checked~* .cart-count::before,
-#item-1:checked~#item-3:checked~#item-4:checked~#item-6:checked~* .cart-count::before,
-#item-2:checked~#item-3:checked~#item-4:checked~#item-6:checked~* .cart-count::before,
-#item-3:checked~#item-4:checked~#item-5:checked~#item-6:checked~* .cart-count::before,
-#item-4:checked~#item-5:checked~#item-6:checked~#item-7:checked~* .cart-count::before,
-#item-5:checked~#item-6:checked~#item-7:checked~#item-8:checked~* .cart-count::before,
-#item-6:checked~#item-7:checked~#item-8:checked~#item-9:checked~* .cart-count::before {
-    content: '4+';
-}
-
-/* When any item is added, highlight cart badge with animation */
-#item-1:checked~* .cart-count,
-#item-2:checked~* .cart-count,
-#item-3:checked~* .cart-count,
-#item-4:checked~* .cart-count,
-#item-5:checked~* .cart-count,
-#item-6:checked~* .cart-count,
-#item-7:checked~* .cart-count,
-#item-8:checked~* .cart-count,
-#item-9:checked~* .cart-count {
-    background-color: var(--success);
+/* Update cart count badge visibility */
+.cart-count {
+    display: none;
+    /* Hidden by default, JS shows it */
+    background-color: var(--danger);
     animation: bounceIn 0.3s ease;
+}
+
+.cart-count:not(:empty) {
+    display: flex;
 }
 
 @keyframes bounceIn {

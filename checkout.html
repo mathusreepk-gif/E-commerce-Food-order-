@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - FoodHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Header Section -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html" style="text-decoration:none;"><h1>🍽️ FoodHub</h1></a>
+                    <a href="index.html" style="text-decoration:none;">
+                        <h1>🍽️ FoodHub</h1>
+                    </a>
                 </div>
                 <nav class="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
@@ -28,7 +32,7 @@
             <!-- Checkout Form -->
             <div class="checkout-form">
                 <h2 class="section-title">Checkout</h2>
-                
+
                 <h3>1. Delivery Address</h3>
                 <br>
                 <div class="form-group">
@@ -68,12 +72,11 @@
             </div>
 
             <!-- Order Summary -->
-            <div class="order-summary">
+            <div class="order-summary" id="order-summary-container">
                 <h3>Order Summary</h3>
                 <br>
-                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    <span>Margherita Pizza (x1)</span>
-                    <span>₹299</span>
+                <div id="checkout-items-list">
+                    <!-- Dynamic items will be injected here -->
                 </div>
                 <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
                     <span>Delivery Fee</span>
@@ -84,14 +87,14 @@
                     <span>-₹50</span>
                 </div>
                 <hr style="border:0; border-top:1px solid var(--border-color); margin:15px 0;">
-                <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:1.2rem; margin-bottom:20px;">
+                <div
+                    style="display:flex; justify-content:space-between; font-weight:bold; font-size:1.2rem; margin-bottom:20px;">
                     <span>Total Amount</span>
-                    <span>₹289</span>
+                    <span id="checkout-total">₹0</span>
                 </div>
 
-                <!-- We navigate to tracking.html when placed to simulate flow without JS -->
                 <a href="tracking.html" style="text-decoration:none;">
-                    <button class="checkout-btn">Place Order</button>
+                    <button class="checkout-btn" onclick="clearCart()">Place Order</button>
                 </a>
             </div>
         </div>
@@ -105,5 +108,43 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('foodhub_cart')) || [];
+            const itemsList = document.getElementById('checkout-items-list');
+            const totalDisplay = document.getElementById('checkout-total');
+
+            let subtotal = 0;
+            itemsList.innerHTML = '';
+
+            if (cart.length === 0) {
+                itemsList.innerHTML = '<p style="color: #686b78;">Your cart is empty!</p>';
+                totalDisplay.innerText = '₹0';
+                return;
+            }
+
+            cart.forEach(item => {
+                subtotal += item.price;
+                const itemDiv = document.createElement('div');
+                itemDiv.style.display = 'flex';
+                itemDiv.style.justifyContent = 'space-between';
+                itemDiv.style.marginBottom = '10px';
+                itemDiv.innerHTML = `
+                    <span>${item.name} (x1)</span>
+                    <span>₹${item.price}</span>
+                `;
+                itemsList.appendChild(itemDiv);
+            });
+
+            const finalTotal = subtotal + 40 - 50;
+            totalDisplay.innerText = `₹${Math.max(0, finalTotal)}`;
+        });
+
+        function clearCart() {
+            localStorage.removeItem('foodhub_cart');
+        }
+    </script>
 </body>
+
 </html>
