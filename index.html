@@ -9,21 +9,11 @@
 </head>
 
 <body>
-    <!-- Cart Toggle Checkbox (Hidden) - Used for Cart Sidebar Toggle -->
-    <input type="checkbox" id="cart-toggle" class="cart-toggle">
+    <!-- Cart Overlay Backdrop -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCartSidebar()"></div>
 
-    <!-- Search Toggle Checkbox (Hidden) -->
-    <input type="checkbox" id="search-toggle" class="search-toggle">
 
-    <!-- Filter Radio Buttons for Search/Category (Hidden) -->
-    <input type="radio" id="filter-all" name="filter" class="filter-radio" checked onchange="filterByCategory('all')">
-    <input type="radio" id="filter-pizza" name="filter" class="filter-radio" onchange="filterByCategory('pizza')">
-    <input type="radio" id="filter-burger" name="filter" class="filter-radio" onchange="filterByCategory('burger')">
-    <input type="radio" id="filter-biryani" name="filter" class="filter-radio" onchange="filterByCategory('biryani')">
-    <input type="radio" id="filter-dessert" name="filter" class="filter-radio" onchange="filterByCategory('dessert')">
-    <input type="radio" id="filter-veg" name="filter" class="filter-radio" onchange="filterByCategory('veg')">
-    <input type="radio" id="filter-nonveg" name="filter" class="filter-radio" onchange="filterByCategory('nonveg')">
-    <input type="radio" id="filter-offers" name="filter" class="filter-radio" onchange="filterByCategory('offers')">
+
 
     <!-- Header Section -->
     <header class="header">
@@ -31,54 +21,39 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html" style="text-decoration:none;">
-                        <h1>🍽️ FoodHub</h1>
+                    <a href="index.html">
+                        🍽️ FoodHub
                     </a>
                 </div>
 
                 <!-- Search Bar with Filter Options -->
                 <div class="search-bar">
                     <div class="search-input-wrapper">
+                        <label for="search-input" class="search-icon">🔍</label>
                         <input type="text" id="search-input"
                             placeholder="Search for restaurants, cuisines, or dishes..." class="search-input"
-                            onkeyup="searchFood()">
-                        <label for="search-toggle" class="search-icon">🔍</label>
-                    </div>
-                    <div class="search-dropdown">
-                        <div class="search-dropdown-header">
-                            <span>Filter by:</span>
-                            <label for="search-toggle" class="close-search">✕</label>
-                        </div>
-                        <label for="filter-all" class="search-option">🍽️ All Items</label>
-                        <label for="filter-pizza" class="search-option">🍕 Pizza</label>
-                        <label for="filter-burger" class="search-option">🍔 Burgers</label>
-                        <label for="filter-biryani" class="search-option">🍛 Biryani</label>
-                        <label for="filter-dessert" class="search-option">🍰 Desserts</label>
-                        <label for="filter-veg" class="search-option">🟢 Vegetarian</label>
-                        <label for="filter-nonveg" class="search-option">🔴 Non-Veg</label>
-                        <label for="filter-offers" class="search-option">🎁 Offers Only</label>
+                            onkeyup="searchFood()" aria-label="Search food">
                     </div>
                 </div>
 
                 <!-- Navigation -->
                 <nav class="nav-menu">
-                    <label for="filter-all" class="nav-link">Home</label>
+                    <span class="nav-link active" onclick="filterByCategory('all')" style="cursor:pointer;">Home</span>
                     <a href="#categories" class="nav-link">Categories</a>
-                    <label for="filter-offers" class="nav-link">Offers</label>
                     <a href="account.html" class="nav-link">Account</a>
                 </nav>
 
                 <!-- Cart Button -->
-                <label for="cart-toggle" class="cart-btn">
+                <button class="cart-btn" aria-label="Open cart" onclick="toggleCartSidebar()">
                     🛒 Cart
                     <span class="cart-count" id="cart-count-badge">0</span>
-                </label>
+                </button>
             </div>
         </div>
     </header>
 
     <!-- Hero Banner -->
-    <section class="hero" id="home">
+    <section class="hero reveal" id="home">
         <div class="container">
             <div class="hero-content">
                 <h2>Order Your Favorite Food Online</h2>
@@ -90,40 +65,36 @@
     <!-- Food Categories Section -->
     <section class="categories" id="categories">
         <div class="container">
-            <h2 class="section-title">What's on your mind?</h2>
+            <h2 class="section-title reveal">What's on your mind?</h2>
             <div class="category-grid">
-                <label for="filter-pizza" class="category-card">
+                <div class="category-card reveal" onclick="filterByCategory('pizza')">
                     <div class="category-icon">🍕</div>
                     <h3>Pizza</h3>
-                </label>
-                <label for="filter-burger" class="category-card">
+                </div>
+                <div class="category-card reveal" onclick="filterByCategory('burger')">
                     <div class="category-icon">🍔</div>
                     <h3>Burgers</h3>
-                </label>
-                <label for="filter-biryani" class="category-card">
+                </div>
+                <div class="category-card reveal" onclick="filterByCategory('biryani')">
                     <div class="category-icon">🍛</div>
                     <h3>Biryani</h3>
-                </label>
-                <label for="filter-dessert" class="category-card">
+                </div>
+                <div class="category-card reveal" onclick="filterByCategory('dessert')">
                     <div class="category-icon">🍰</div>
                     <h3>Desserts</h3>
-                </label>
-                <label for="filter-all" class="category-card">
+                </div>
+                <div class="category-card reveal" onclick="filterByCategory('noodles')">
                     <div class="category-icon">🍜</div>
                     <h3>Noodles</h3>
-                </label>
-                <label for="filter-all" class="category-card">
+                </div>
+                <div class="category-card reveal" onclick="filterByCategory('tacos')">
                     <div class="category-icon">🌮</div>
                     <h3>Tacos</h3>
-                </label>
-                <label for="filter-all" class="category-card">
-                    <div class="category-icon">🍗</div>
-                    <h3>Chicken</h3>
-                </label>
-                <label for="filter-veg" class="category-card">
+                </div>
+                <div class="category-card reveal" onclick="filterByCategory('salad')">
                     <div class="category-icon">🥗</div>
                     <h3>Salads</h3>
-                </label>
+                </div>
             </div>
         </div>
     </section>
@@ -131,10 +102,10 @@
     <!-- Food Items Listing Section -->
     <section class="food-listing" id="food-listing">
         <div class="container">
-            <h2 class="section-title" id="listing-title">Popular Dishes Near You</h2>
+            <h2 class="section-title reveal" id="listing-title">Popular Dishes Near You</h2>
 
             <!-- Food Items Grid -->
-            <div class="food-grid" id="food-grid">
+            <div class="food-grid reveal" id="food-grid">
                 <!-- Food items will be dynamically injected here -->
             </div>
         </div>
@@ -144,7 +115,7 @@
     <div class="cart-sidebar">
         <div class="cart-header">
             <h2>🛒 My Cart</h2>
-            <label for="cart-toggle" class="close-cart">✕</label>
+            <button class="close-cart" onclick="toggleCartSidebar()">✕</button>
         </div>
         <div class="cart-items" id="cart-items-container">
             <!-- Cart items will be dynamically injected here -->
@@ -154,34 +125,35 @@
                 <span>Total:</span>
                 <span class="total-amount" id="total-amount-display">₹0</span>
             </div>
-            <a href="checkout.html" class="checkout-btn"
-                style="display:block; text-align:center; text-decoration:none;">Proceed to Checkout</a>
+            <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer" id="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>FoodHub</h3>
-                    <p>Delicious food delivered to your doorstep</p>
+                    <h3>🍽️ FoodHub</h3>
+                    <p>Delicious food delivered to your doorstep. Experience the best flavors in town.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="#about">About Us</a>
-                    <a href="#careers">Careers</a>
-                    <a href="#team">Team</a>
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#categories">Categories</a>
+                    <a href="account.html">My Account</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <a href="#help">Help & Support</a>
+                    <h4>Support</h4>
+                    <a href="#help">Help Center</a>
                     <a href="#partner">Partner with Us</a>
+                    <a href="#legal">Legal Terms</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Legal</h4>
-                    <a href="#terms">Terms & Conditions</a>
-                    <a href="#privacy">Privacy Policy</a>
+                    <h4>Follow Us</h4>
+                    <div style="display:flex; gap: 15px; font-size: 1.5rem;">
+                        <span>🐦</span> <span>📘</span> <span>📸</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -192,8 +164,9 @@
 
     <script src="recipes.js"></script>
     <script>
-        // Cart State
+        // Application State
         let cart = JSON.parse(localStorage.getItem('foodhub_cart')) || [];
+        let currentCategory = 'all';
 
         // Initialize Application
         document.addEventListener('DOMContentLoaded', () => {
@@ -215,12 +188,29 @@
 
             // Reset category filters visually
             if (filter !== '') {
-                document.getElementById('filter-all').checked = true;
+                currentCategory = 'all';
+                // Remove active states from any categories if needed
             }
+        }
+
+        // Toggle Cart Sidebar Visibility
+        function toggleCartSidebar() {
+            const sidebar = document.querySelector('.cart-sidebar');
+            const overlay = document.getElementById('cart-overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
         }
 
         // Filter by Category
         function filterByCategory(category) {
+            currentCategory = category;
+
+            // UI Feedback: Update Active Link
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            if (category === 'all') {
+                document.querySelector('.nav-link:first-child').classList.add('active');
+            }
+
             if (category === 'all') {
                 renderRecipes(recipes);
                 document.getElementById('listing-title').innerText = "Popular Dishes Near You";
@@ -245,7 +235,7 @@
                 card.className = 'food-card';
                 card.innerHTML = `
                     <div class="food-image">
-                        <img src="${recipe.image}" alt="${recipe.name}">
+                        <img src="${recipe.image}" alt="${recipe.name}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400'">
                         ${recipe.badge ? `<span class="badge offer-badge">${recipe.badge}</span>` : ''}
                         <span class="badge ${recipe.veg ? 'veg-badge' : 'nonveg-badge'}">${recipe.veg ? '🟢' : '🔴'}</span>
                     </div>
@@ -286,13 +276,12 @@
             updateCartUI();
 
             // Re-render recipes to update button states without full reload
-            const currentFilter = document.querySelector('input[name="filter"]:checked').id.replace('filter-', '');
             const searchVal = document.getElementById('search-input').value.toLowerCase();
 
             if (searchVal) {
                 searchFood();
             } else {
-                filterByCategory(currentFilter);
+                filterByCategory(currentCategory);
             }
         }
 

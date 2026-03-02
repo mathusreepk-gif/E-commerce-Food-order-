@@ -14,13 +14,13 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html" style="text-decoration:none;">
-                        <h1>🍽️ FoodHub</h1>
+                    <a href="index.html">
+                        🍽️ FoodHub
                     </a>
                 </div>
                 <nav class="nav-menu">
                     <a href="index.html" class="nav-link">Home</a>
-                    <a href="account.html" class="nav-link">Account</a>
+                    <a href="account.html" class="nav-link active">Account</a>
                 </nav>
             </div>
         </div>
@@ -32,16 +32,42 @@
         <input type="checkbox" id="logged-in" style="display:none;" class="auth-toggle">
 
         <!-- Not logged in view (Auth tabs) -->
-        <div class="auth-container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: var(--spacing-md)">Welcome to FoodHub
-            </h2>
-            <input type="radio" name="auth-tab" id="auth-login" class="tab-radio" checked>
-            <input type="radio" name="auth-tab" id="auth-register" class="tab-radio">
+        <div class="auth-container reveal"
+            style="max-width: 500px; margin: var(--space-2xl) auto; background: var(--bg-card); padding: var(--space-2xl); border-radius: var(--radius-xl); border: 1px solid var(--border);">
+            <h2 class="section-title" style="text-align: center; margin-bottom: var(--space-xl); padding-left: 0;">
+                Welcome back</h2>
 
-            <div class="auth-tabs">
-                <label for="auth-login" class="auth-tab-label">Login</label>
-                <label for="auth-register" class="auth-tab-label">Register</label>
+            <input type="radio" name="auth-tab" id="auth-login" class="tab-radio" checked style="display:none;">
+            <input type="radio" name="auth-tab" id="auth-register" class="tab-radio" style="display:none;">
+
+            <div class="auth-tabs"
+                style="display:flex; gap: var(--space-md); margin-bottom: var(--space-xl); border-bottom: 1px solid var(--divider);">
+                <label for="auth-login" class="auth-tab-label"
+                    style="flex:1; text-align:center; padding: var(--space-md); cursor:pointer; font-weight:700; color: var(--text-muted); transition: var(--transition-base);">Login</label>
+                <label for="auth-register" class="auth-tab-label"
+                    style="flex:1; text-align:center; padding: var(--space-md); cursor:pointer; font-weight:700; color: var(--text-muted); transition: var(--transition-base);">Register</label>
             </div>
+
+            <style>
+                #auth-login:checked~.auth-tabs [for="auth-login"],
+                #auth-register:checked~.auth-tabs [for="auth-register"] {
+                    color: var(--primary);
+                    border-bottom: 2px solid var(--primary);
+                }
+
+                .auth-form {
+                    display: none;
+                    animation: fadeInUp 0.4s ease;
+                }
+
+                #auth-login:checked~#form-login {
+                    display: block;
+                }
+
+                #auth-register:checked~#form-register {
+                    display: block;
+                }
+            </style>
 
             <!-- Login Form -->
             <div class="auth-form" id="form-login">
@@ -53,15 +79,13 @@
                     <label>Password</label>
                     <input type="password" placeholder="••••••••" required>
                 </div>
-                <!-- CSS Hack to view Dashboard without JS -->
-                <label for="logged-in" class="checkout-btn"
-                    style="display:block; text-align:center; margin-top: 20px; text-decoration: none; cursor:pointer;"
+                <label for="logged-in" class="checkout-btn" style="cursor:pointer;"
                     onclick="setTimeout(function(){window.scrollTo(0,0);}, 50);">
                     Login Securely
                 </label>
-                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--light-text);">
-                    Don't have an account? <label for="auth-register"
-                        style="color: var(--primary-color); cursor: pointer; font-weight: bold;">Register here</label>
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                    New here? <label for="auth-register"
+                        style="color: var(--primary); cursor: pointer; font-weight: 700;">Create an account</label>
                 </p>
             </div>
 
@@ -79,14 +103,12 @@
                     <label>Password</label>
                     <input type="password" placeholder="••••••••" required>
                 </div>
-                <!-- Make it navigate back to login as a flow simulation -->
-                <label for="auth-login" class="checkout-btn"
-                    style="display:block; text-align:center; background:var(--secondary-color); margin-top: 20px; cursor: pointer;">
+                <label for="auth-login" class="checkout-btn" style="background:var(--secondary); cursor: pointer;">
                     Create Account
                 </label>
-                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--light-text);">
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
                     Already have an account? <label for="auth-login"
-                        style="color: var(--primary-color); cursor: pointer; font-weight: bold;">Login</label>
+                        style="color: var(--primary); cursor: pointer; font-weight: 700;">Sign in</label>
                 </p>
             </div>
         </div>
@@ -157,16 +179,16 @@
             }
         </style>
 
-        <div class="dashboard-container">
+        <div class="dashboard-container reveal">
             <h2 class="section-title">My Account</h2>
 
             <div class="account-container">
                 <!-- CSS Hidden Radios for Account Tabs -->
-                <input type="radio" name="acc-tab" id="tab-profile" class="tab-radio" checked>
-                <input type="radio" name="acc-tab" id="tab-orders" class="tab-radio">
-                <input type="radio" name="acc-tab" id="tab-addresses" class="tab-radio">
-                <input type="radio" name="acc-tab" id="tab-favorites" class="tab-radio">
-                <input type="radio" name="acc-tab" id="tab-smart" class="tab-radio">
+                <input type="radio" name="acc-tab" id="tab-profile" class="tab-radio" checked style="display:none;">
+                <input type="radio" name="acc-tab" id="tab-orders" class="tab-radio" style="display:none;">
+                <input type="radio" name="acc-tab" id="tab-addresses" class="tab-radio" style="display:none;">
+                <input type="radio" name="acc-tab" id="tab-favorites" class="tab-radio" style="display:none;">
+                <input type="radio" name="acc-tab" id="tab-smart" class="tab-radio" style="display:none;">
 
                 <!-- Sidebar Navigation -->
                 <div class="account-sidebar">
@@ -175,8 +197,8 @@
                     <label for="tab-addresses" class="tab-label">📍 Saved Addresses</label>
                     <label for="tab-favorites" class="tab-label">❤️ Favorite Restaurants</label>
                     <label for="tab-smart" class="tab-label">🌟 Smart Features</label>
-                    <label for="logged-in" class="tab-label" style="color:var(--danger); margin-top:10px;">🚪
-                        Logout</label>
+                    <label for="logged-in" class="tab-label"
+                        style="color:var(--error); margin-top:10px; opacity:0.8;">🚪 Logout</label>
                 </div>
 
                 <!-- Tab Contents -->

@@ -14,8 +14,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html" style="text-decoration:none;">
-                        <h1>🍽️ FoodHub</h1>
+                    <a href="index.html">
+                        🍽️ FoodHub
                     </a>
                 </div>
                 <nav class="nav-menu">
@@ -28,13 +28,12 @@
 
     <!-- Checkout Content -->
     <main class="container">
-        <div class="checkout-container">
+        <div class="checkout-container reveal">
             <!-- Checkout Form -->
             <div class="checkout-form">
                 <h2 class="section-title">Checkout</h2>
 
-                <h3>1. Delivery Address</h3>
-                <br>
+                <h3 style="margin-bottom: var(--space-lg);">1. Delivery Address</h3>
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" placeholder="John Doe" required>
@@ -48,8 +47,7 @@
                     <input type="tel" id="phone" placeholder="+1 234 567 8900" required>
                 </div>
 
-                <br><br>
-                <h3>2. Payment Options</h3>
+                <h3 style="margin: var(--space-xl) 0 var(--space-lg);">2. Payment Option</h3>
                 <div class="payment-options">
                     <input type="radio" name="payment" id="pay-upi" class="payment-radio" style="display:none;" checked>
                     <label for="pay-upi" class="payment-option-label">
@@ -73,22 +71,23 @@
 
             <!-- Order Summary -->
             <div class="order-summary" id="order-summary-container">
-                <h3>Order Summary</h3>
-                <br>
-                <div id="checkout-items-list">
+                <h3 style="margin-bottom: var(--space-lg);">Order Summary</h3>
+                <div id="checkout-items-list" style="margin-bottom: var(--space-lg);">
                     <!-- Dynamic items will be injected here -->
                 </div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                <div
+                    style="display:flex; justify-content:space-between; margin-bottom:var(--space-sm); font-size: 0.95rem; color: var(--text-muted);">
                     <span>Delivery Fee</span>
                     <span>₹40</span>
                 </div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:10px; color:var(--success);">
+                <div
+                    style="display:flex; justify-content:space-between; margin-bottom:var(--space-md); font-size: 0.95rem; color: var(--success);">
                     <span>Discount</span>
                     <span>-₹50</span>
                 </div>
-                <hr style="border:0; border-top:1px solid var(--border-color); margin:15px 0;">
+                <hr style="border:0; border-top:1px solid var(--divider); margin: var(--space-md) 0;">
                 <div
-                    style="display:flex; justify-content:space-between; font-weight:bold; font-size:1.2rem; margin-bottom:20px;">
+                    style="display:flex; justify-content:space-between; font-weight:800; font-size:1.3rem; margin-bottom: var(--space-xl);">
                     <span>Total Amount</span>
                     <span id="checkout-total">₹0</span>
                 </div>

@@ -48,7 +48,7 @@ const recipes = [
     {
         id: 5,
         name: "Veg Hakka Noodles",
-        category: "veg",
+        category: "veg noodles",
         description: "Stir-fried noodles with fresh vegetables",
         price: 179,
         rating: 4.1,
@@ -71,7 +71,7 @@ const recipes = [
     {
         id: 7,
         name: "Mexican Tacos",
-        category: "nonveg",
+        category: "nonveg tacos",
         description: "Crispy tacos with spicy chicken filling",
         price: 229,
         rating: 4.4,
@@ -82,7 +82,7 @@ const recipes = [
     {
         id: 8,
         name: "BBQ Chicken Wings",
-        category: "nonveg offers",
+        category: "nonveg chicken offers",
         description: "Smoky BBQ flavored crispy wings",
         price: 279,
         rating: 4.7,
@@ -94,7 +94,7 @@ const recipes = [
     {
         id: 9,
         name: "Caesar Salad",
-        category: "veg",
+        category: "veg salad",
         description: "Fresh greens with caesar dressing",
         price: 199,
         rating: 4.0,
@@ -149,7 +149,7 @@ const recipes = [
     {
         id: 14,
         name: "Schezwan Noodles",
-        category: "veg",
+        category: "veg noodles",
         description: "Spicy noodles with schezwan sauce",
         price: 189,
         rating: 4.2,
@@ -165,13 +165,13 @@ const recipes = [
         price: 329,
         rating: 4.3,
         deliveryTime: "30 mins",
-        image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400",
+        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400",
         veg: false
     },
     {
         id: 16,
         name: "Greek Salad",
-        category: "veg",
+        category: "veg salad",
         description: "Fresh cucumbers, tomatoes, and feta cheese",
         price: 219,
         rating: 4.5,
@@ -227,7 +227,7 @@ const recipes = [
     {
         id: 21,
         name: "Pad Thai Noodles",
-        category: "nonveg",
+        category: "nonveg noodles",
         description: "Thai style stir-fried noodles with shrimp",
         price: 299,
         rating: 4.6,
@@ -261,7 +261,7 @@ const recipes = [
     {
         id: 24,
         name: "Quinoa Salad",
-        category: "veg",
+        category: "veg salad",
         description: "Healthy quinoa with roasted vegetables",
         price: 249,
         rating: 4.3,
@@ -317,7 +317,7 @@ const recipes = [
     {
         id: 29,
         name: "Singapore Noodles",
-        category: "veg offers",
+        category: "veg noodles offers",
         description: "Thin rice noodles with curry powder and veggies",
         price: 209,
         rating: 4.2,
@@ -329,7 +329,7 @@ const recipes = [
     {
         id: 30,
         name: "Fried Chicken Bucket",
-        category: "nonveg",
+        category: "nonveg chicken",
         description: "8 pieces of original recipe fried chicken",
         price: 599,
         rating: 4.8,
@@ -351,7 +351,7 @@ const recipes = [
     {
         id: 32,
         name: "Avocado Toast",
-        category: "veg",
+        category: "veg salad",
         description: "Sourdough bread topped with mashed avocado",
         price: 189,
         rating: 4.1,
@@ -407,7 +407,7 @@ const recipes = [
     {
         id: 37,
         name: "Udon Noodles",
-        category: "nonveg",
+        category: "nonveg noodles",
         description: "Thick wheat noodles with seafood and broth",
         price: 349,
         rating: 4.5,
@@ -418,7 +418,7 @@ const recipes = [
     {
         id: 38,
         name: "Chicken Kebab",
-        category: "nonveg offers",
+        category: "nonveg chicken offers",
         description: "Succulent grilled chicken skewers",
         price: 299,
         rating: 4.7,
@@ -441,7 +441,7 @@ const recipes = [
     {
         id: 40,
         name: "Fruit Salad",
-        category: "veg offers",
+        category: "veg salad offers",
         description: "Assorted seasonal fresh fruits",
         price: 149,
         rating: 4.4,
@@ -498,7 +498,7 @@ const recipes = [
     {
         id: 45,
         name: "Ramen",
-        category: "nonveg",
+        category: "nonveg noodles",
         description: "Japanese noodle soup with pork and egg",
         price: 449,
         rating: 4.8,
@@ -509,7 +509,7 @@ const recipes = [
     {
         id: 46,
         name: "Chicken Lollipop",
-        category: "nonveg",
+        category: "nonveg chicken",
         description: "Spicy and crispy chicken appetizers",
         price: 279,
         rating: 4.5,
@@ -531,7 +531,7 @@ const recipes = [
     {
         id: 48,
         name: "Caprese Salad",
-        category: "veg",
+        category: "veg salad",
         description: "Fresh mozzarella, tomatoes, and basil",
         price: 259,
         rating: 4.4,
@@ -599,7 +599,7 @@ const recipes = [
     {
         id: 54,
         name: "Chilli Chicken",
-        category: "nonveg",
+        category: "nonveg chicken",
         description: "Indo-Chinese style spicy chicken",
         price: 259,
         rating: 4.4,
@@ -621,7 +621,7 @@ const recipes = [
     {
         id: 56,
         name: "Waldorf Salad",
-        category: "veg",
+        category: "veg salad",
         description: "Apples, grapes, walnuts, and celery",
         price: 279,
         rating: 4.3,
@@ -671,7 +671,7 @@ const recipes = [
         price: 79,
         rating: 4.9,
         deliveryTime: "10 mins",
-        image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400",
+        image: "https://images.unsplash.com/photo-1589114121004-ec9035dfbb2a?w=400",
         veg: true
     },
     {
@@ -682,13 +682,13 @@ const recipes = [
         price: 129,
         rating: 4.0,
         deliveryTime: "10 mins",
-        image: "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400",
+        image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400",
         veg: true
     },
     {
         id: 62,
         name: "Tandoori Chicken",
-        category: "nonveg offers",
+        category: "nonveg chicken offers",
         description: "Half chicken marinated in yogurt and spices",
         price: 349,
         rating: 4.8,
@@ -711,7 +711,7 @@ const recipes = [
     {
         id: 64,
         name: "Coleslaw Salad",
-        category: "veg",
+        category: "veg salad",
         description: "Shredded cabbage and carrots in creamy mayo",
         price: 119,
         rating: 3.9,

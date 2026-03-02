@@ -15,8 +15,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html" style="text-decoration:none;">
-                        <h1>🍽️ FoodHub</h1>
+                    <a href="index.html">
+                        🍽️ FoodHub
                     </a>
                 </div>
                 <nav class="nav-menu">
@@ -29,16 +29,16 @@
 
     <!-- Tracking Content -->
     <main class="container">
-        <div class="tracking-container">
+        <div class="tracking-container reveal">
             <div class="tracking-card">
-                <h2 class="section-title" style="margin-bottom:10px;">Track Order</h2>
-                <p>Order ID: #FH84920</p>
+                <h2 class="section-title" style="margin-bottom:var(--space-xs);">Track Order</h2>
+                <p style="color: var(--text-muted); margin-bottom: var(--space-xl);">Order ID: #FH84920</p>
                 <div class="stepper">
                     <div class="step active">
                         <div class="step-icon">✓</div>
                         <div class="step-content">
                             <b>Order Confirmed</b>
-                            <div style="font-size:0.85rem; color:var(--light-text);">We have received your order.</div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">We have received your order.</div>
                         </div>
                         <div class="step-line"></div>
                     </div>
@@ -47,7 +47,7 @@
                         <div class="step-icon">🔥</div>
                         <div class="step-content">
                             <b>Preparing Food</b>
-                            <div style="font-size:0.85rem; color:var(--light-text);">Your food is being packed with
+                            <div style="font-size:0.85rem; color:var(--text-muted);">Your food is being packed with
                                 love.</div>
                         </div>
                         <div class="step-line"></div>
@@ -57,46 +57,48 @@
                         <div class="step-icon">🛵</div>
                         <div class="step-content">
                             <b>Out for Delivery</b>
-                            <div style="font-size:0.85rem; color:var(--light-text);">Partner is on the way to your
+                            <div style="font-size:0.85rem; color:var(--text-muted);">Partner is on the way to your
                                 location.</div>
                         </div>
                         <div class="step-line"></div>
                     </div>
 
-                    <!-- Not yet active -->
                     <div class="step">
                         <div class="step-icon">🏠</div>
                         <div class="step-content">
-                            <b style="color:var(--light-text);">Delivered</b>
+                            <b style="color:var(--text-dim);">Delivered</b>
                         </div>
                         <div class="step-line"></div>
                     </div>
                 </div>
 
-                <h3>Live Location</h3>
-                <div class="live-map">
-                    <span>📍 Map Loading... (Demo Mode)</span>
+                <h3 style="margin-bottom: var(--space-md);">Live Location</h3>
+                <div class="live-map"
+                    style="background: var(--bg-surface); height: 200px; display:flex; align-items:center; justify-content:center; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: var(--space-xl);">
+                    <span style="color: var(--text-dim);">📍 Map Loading... (Demo Mode)</span>
                 </div>
 
-                <div class="partner-details">
-                    <div class="partner-avatar">
+                <div class="partner-details"
+                    style="display:flex; align-items:center; gap: var(--space-md); padding: var(--space-md); background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--border);">
+                    <div class="partner-avatar"
+                        style="font-size: 2rem; width: 50px; height: 50px; background: var(--bg-surface); border-radius: 50%; display:flex; align-items:center; justify-content:center;">
                         👨‍🦱
                     </div>
                     <div>
                         <h4 style="margin:0;">Ramesh Kumar</h4>
-                        <div style="font-size:0.85rem; color:var(--light-text);">Delivery Partner • ⭐️ 4.8</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">Delivery Partner • ⭐ 4.8</div>
                     </div>
                     <div style="margin-left:auto;">
                         <button
-                            style="padding:8px 16px; background:var(--primary-color); color:var(--white); border:none; border-radius:var(--radius-sm); font-weight:bold; cursor:pointer;"
+                            style="padding:8px 20px; background:var(--primary); color:var(--bg-main); border:none; border-radius:var(--radius-md); font-weight:800; cursor:pointer;"
                             onclick="alert('Calling partner...')">CALL</button>
                     </div>
                 </div>
 
                 <br>
-                <!-- Back home equivalent -->
                 <a href="index.html" style="text-decoration:none;">
-                    <button class="checkout-btn" style="background-color: var(--dark-text);">Return Home</button>
+                    <button class="checkout-btn" style="background: var(--bg-surface); color: var(--text-main);">Return
+                        Home</button>
                 </a>
             </div>
         </div>
